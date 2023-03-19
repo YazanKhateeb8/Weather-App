@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="/handlebars/dist/handlebars.js"></script>
+    <script src="/jquery/dist/jquery.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+        <div class="input-field">
+            <input type="text" id="city-name" placeholder="City" />
+            <button type="button" id="search-btn">Search</button>
+        </div>
+      <div class="citiesWeather"></div>
+    </div>
+    
+
+
+    <script id="cities-template" type="text/x-handlebars-template">
+
+      {{#each cities}}
+        <div class="weatherItem">
+            <div class="weatherItem-btn">
+                {{#if IsExistInDB}}
+                    <button id="remove-btn">-</button>
+                {{else}}
+                    <button id="add-btn">+</button>
+                {{/if}}
+            </div>
+            <div class="details">
+            <div class="temp-city">
+                <div class="cityTemp">{{temperature}} °C</div>
+                <div class="cityName">{{cityName}}</div>
+            </div>
+            
+            <div class="condition-icon">
+                <div class='weatherIcon'><img src="https://openweathermap.org/img/wn/{{conditionPic}}@2x.png"></div>
+                <div class="weatherCond">{{condition}}</div>
+            </div>
+        </div>
+        </div>
+      {{/each}}
+
+    </script>
+
+
+    <script src="Models.js"></script>
+    <script src="Render.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

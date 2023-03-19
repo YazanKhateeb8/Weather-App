@@ -1,0 +1,124 @@
+body {
+  background-color: #2c87c2;
+}
+
+.container {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  grid-template-areas: "s" "f";
+}
+
+.city-name {
+  grid-area: s;
+}
+
+input[type="text"] {
+  background-color: #2c87c2;
+  border-bottom: 1px solid white;
+  width: 80%;
+  height: 4vh;
+  color: white;
+}
+
+::placeholder {
+  color: white;
+}
+
+.fa-magnifying-glass {
+  color: white;
+  margin-left: 2%;
+  font-size: 2rem ;
+  cursor: pointer;
+}
+
+.citiesWeather {
+  grid-area: f;
+  width: 100%;
+  height: 95vh;
+  padding-top: 2%;
+  justify-content: space-around;
+}
+
+.weatherItem {
+  box-shadow: 2px 2px 10px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 15%;
+  grid-template-areas: "ar d";
+  margin-top: 2%;
+  
+}
+
+.weatherItem-btn {
+  grid-area: ar;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
+.weatherItem-btn > button {
+  border: 0;
+  font-size: 20px;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+}
+#remove-btn {
+  background-color: #902d41;
+}
+
+#add-btn {
+  background-color: #404e4d;
+}
+
+.details {
+  grid-area: d;
+  display: grid;
+  grid-template-columns: 50%;
+  grid-template-areas: "tc ci";
+  color: white;
+}
+
+.temp-city {
+  grid-area: tc;
+  display: grid;
+  grid-template-rows: 50%;
+  grid-template-areas: "temp" "city";
+}
+
+.cityTemp {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  font-size: 2.5rem; 
+}
+
+.cityName {
+  display: flex;
+  justify-content: center;
+  align-items: center;   
+  font-size: 1.5rem;
+}
+
+.condition-icon {
+  grid-area: ci;
+  display: grid;
+  grid-template-rows: 50%;
+  grid-template-areas: "icon" "condition";
+}
+
+.weatherIcon {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  font-size: 2.5rem; 
+}
+
+.weatherCond {
+  display: flex;
+  justify-content: center;
+  align-items: center;   
+  font-size: 1.5rem;
+}
+
